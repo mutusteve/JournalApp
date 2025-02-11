@@ -1,6 +1,7 @@
-import '@/styles/globals.css';
-import { ThemeProvider } from 'next-themes'; // For dark/light mode support
+import '../styles/global.css';
+import { ThemeProvider } from 'next-themes';
 import { motion, AnimatePresence } from 'framer-motion';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default function App({ Component, pageProps, router }) {
   return (

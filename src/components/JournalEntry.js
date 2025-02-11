@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { supabase } from '../lib/supabaseClient';
-import { Button } from './ui/button'; // shadcn/ui button
-import { Input } from './ui/input'; // shadcn/ui input
+import { Button, Form } from "react-bootstrap";
 import { motion } from 'framer-motion';
 
 export default function JournalEntry({ user }) {
@@ -23,14 +22,14 @@ export default function JournalEntry({ user }) {
       transition={{ duration: 0.5 }}
     >
       <h2 className="text-xl font-bold mb-4">Today's Journal Entry</h2>
-      <Input
+      <Form.Control
         type="text"
         placeholder="What happened today?"
         value={event}
         onChange={(e) => setEvent(e.target.value)}
         className="mb-4"
       />
-      <Button onClick={handleSubmit}>Save</Button>
+      <Button variant="primary" onClick={handleSubmit}>Save</Button>
     </motion.div>
   );
 }
